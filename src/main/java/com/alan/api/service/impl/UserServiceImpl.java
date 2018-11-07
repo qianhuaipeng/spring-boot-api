@@ -90,7 +90,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     @Override
     public boolean verifyPassword(String rawPassword, String encodedPassword) {
-        return false;
+        return this.passwordEncoder.matches(rawPassword, encodedPassword);
     }
 
     @Override

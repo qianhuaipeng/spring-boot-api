@@ -1,11 +1,7 @@
-# 开发环境配置
-# 入口端口号
 server:
   port: 8080
 
-##################################
-# spring 相关配置
-##################################
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/alan_dev?useUnicode=true&characterEncoding=utf-8&useLegacyDatetimeCode=false&serverTimezone=UTC
@@ -15,11 +11,14 @@ spring:
 logging:
   level:
     com.alan.api: debug
+jwt:
+  expiration-time: 24000
+  header: Authorization
+  token-prefix: Bearer
+  privateKey: rsa/private-key.pem
+  publicKey: rsa/public-key.pem
+  authorities-key: auth
 
 
 
 
-
-################################
-# 日志级别
-################################

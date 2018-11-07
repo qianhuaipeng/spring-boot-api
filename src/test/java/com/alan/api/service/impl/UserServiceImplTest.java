@@ -44,7 +44,7 @@ public class UserServiceImplTest {
 
     @Test
     public void findDetailBy(){
-        User user = userService.findDetailBy("id",1);
+        User user = userService.findDetailBy("id",3);
         System.out.println(user.toString());
     }
 }
