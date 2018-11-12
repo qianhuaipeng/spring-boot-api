@@ -2,11 +2,13 @@ package com.alan.api.service.impl;
 
 import com.alan.api.core.exception.ServiceException;
 import com.alan.api.core.service.AbstractService;
+import com.alan.api.mapper.PermissionMapper;
 import com.alan.api.mapper.UserMapper;
 import com.alan.api.mapper.UserRoleMapper;
 import com.alan.api.model.User;
 import com.alan.api.model.UserRole;
 import com.alan.api.service.UserService;
+import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,8 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private PermissionMapper permissionMapper;
     @Resource
     private UserRoleMapper userRoleMapper;
     @Resource
@@ -78,9 +82,9 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
             throw new UsernameNotFoundException("not found this username");
         }
         if ("ROLE_ADMIN".equals(user.getRoleName())) {
-
+            user.setPermissionCodeList(permissionMapper.findAllCode());
         }
-        return null;
+        return user;
     }
 
     @Override
@@ -106,5 +110,11 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Override
     public void updateByCondition(User model, Condition condition) {
 
+    }
+
+    public static void main(String[] args) {
+        String reg = "[^1-9]*(\\d{11}|\\d{15})[^1-9]*";
+        String str = "QWE11111111112sdfsfd";
+        System.out.println(str.matches(reg));
     }
 }

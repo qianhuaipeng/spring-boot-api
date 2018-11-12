@@ -3,7 +3,6 @@ package com.alan.api.model;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

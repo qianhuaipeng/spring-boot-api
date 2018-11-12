@@ -4,6 +4,7 @@ import com.alan.api.core.mapper.MyMapper;
 import com.alan.api.model.Permission;
 import com.alan.api.model.Resource;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -29,5 +30,12 @@ public interface PermissionMapper extends MyMapper<Permission>{
      */
     List<Resource> findRoleWithResourceByRoleId(@Param("roleId") Long roleId);
 
+
+    /**
+     * 获取所有权限代码
+     * @return
+     */
+    @Select("SELECT p.code FROM `permission` p")
+    List<String> findAllCode();
 
 }

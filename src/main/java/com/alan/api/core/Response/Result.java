@@ -30,6 +30,7 @@ public class Result {
         this.msg = builder.msg;
         this.data = builder.data;
     }
+
     public static class Builder {
         private final Integer code;
         private String msg;
@@ -55,8 +56,25 @@ public class Result {
 
     }
 
+    public Integer getCode() {
+        return this.code;
+    }
+
+    public String getMsg() {
+        return this.msg;
+    }
+
+    public Object getData() {
+        return this.data;
+    }
+
     @Override
     public String toString() {
         return JSON.toJSONString(this);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(JSON.toJSONString(new Result.Builder(1).msg("asdads").data("asdad").build()));
+
     }
 }

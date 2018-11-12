@@ -30,4 +30,5 @@ public class Role {
     @NotEmpty(message = "角色名称不能为空")
     private String name;
 
+
 }

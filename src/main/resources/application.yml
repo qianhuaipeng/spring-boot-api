@@ -1,10 +1,11 @@
-# ËùÓĞ»·¾³µÄÍ¨ÓÃÅäÖÃ£¬·ÅÔÚÕâÀï
 spring:
   profiles:
     active: dev
   output:
     ansi:
       enabled: always
+  resources:
+    add-mappings: false   # ä¸æ˜ å°„å·¥ç¨‹ä¸­çš„é™æ€æ–‡ä»¶
 mapper:
   mappers: com.alan.api.core.mapper.MyMapper
   not-empty: false
@@ -12,3 +13,9 @@ mapper:
 mybatis:
   type-aliases-package: com.alan.api.model
   mapper-locations: classpath:mapper/**/*.xml
+pagehelper:
+  page-size-zero: true
+  helperDialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

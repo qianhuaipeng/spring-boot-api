@@ -63,8 +63,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 允许登录和注册
                 .antMatchers( HttpMethod.POST,
-                        "user/login",
-                        "user/register"
+                        "/user/login",
+                        "/user/register"
                 ).permitAll()
                 .anyRequest().authenticated().and();
 
