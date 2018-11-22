@@ -1,7 +1,7 @@
 package com.alan.api.core.exception;
 
-import com.alan.api.core.Response.Result;
-import com.alan.api.core.Response.ResultGenerator;
+import com.alan.api.core.response.Result;
+import com.alan.api.core.response.ResultGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;

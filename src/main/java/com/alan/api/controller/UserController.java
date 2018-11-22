@@ -1,7 +1,7 @@
 package com.alan.api.controller;
 
-import com.alan.api.core.Response.Result;
-import com.alan.api.core.Response.ResultGenerator;
+import com.alan.api.core.response.Result;
+import com.alan.api.core.response.ResultGenerator;
 import com.alan.api.core.jwt.JwtUtil;
 import com.alan.api.model.User;
 import com.alan.api.service.UserService;

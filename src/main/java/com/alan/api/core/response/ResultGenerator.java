@@ -1,4 +1,4 @@
-package com.alan.api.core.Response;
+package com.alan.api.core.response;
 
 import org.springframework.http.HttpStatus;
 

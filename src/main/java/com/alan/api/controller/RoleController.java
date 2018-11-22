@@ -1,7 +1,7 @@
 package com.alan.api.controller;
 
-import com.alan.api.core.Response.Result;
-import com.alan.api.core.Response.ResultGenerator;
+import com.alan.api.core.response.Result;
+import com.alan.api.core.response.ResultGenerator;
 import com.alan.api.dto.RoleWithPermission;
 import com.alan.api.model.RoleWithResource;
 import com.alan.api.service.RoleService;
@@ -41,11 +41,13 @@ public class RoleController {
     }
 
     @PreAuthorize("hasAuthority('role:update')")
+
     public Result update(@RequestBody RoleWithPermission role){
         return ResultGenerator.genOkResult();
     }
 
     @PreAuthorize("hasAuthority('role:list')")
+    @GetMapping
     public Result list(@RequestParam(defaultValue = "0") Integer page,
                        @RequestParam(defaultValue = "0") Integer size){
         PageHelper.startPage(page, size);

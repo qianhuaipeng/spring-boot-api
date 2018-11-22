@@ -1,6 +1,6 @@
 package com.alan.api.core.jwt;
 
-import com.alan.api.core.Response.ResultGenerator;
+import com.alan.api.core.response.ResultGenerator;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

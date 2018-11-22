@@ -10,6 +10,8 @@ import javax.validation.constraints.Size;
 import java.sql.Timestamp;
 import java.util.List;
 
+import static javax.swing.text.StyleConstants.Size;
+
 /**
  * author: alan.peng
  * description: 用户信息类
